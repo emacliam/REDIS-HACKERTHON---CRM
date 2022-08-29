@@ -65,14 +65,17 @@ Here's a short video that explains the project and how it uses Redis:
 ## How it works
 
 ### How the data is stored:
+
 Data is stored using RedisJSON module in DB and RedisOM Python as a client library
-    - Store (Add):
-        - `` model_instance = ModelName(key1=value1, key2=value2, ..., keyN=valueN) ``
-        - `` model_instance.save() ``
+
+- Store (Add):
+          `` model_instance = ModelName(key1=value1, key2=value2, ..., keyN=valueN) ``
+          `` model_instance.save() ``
 
 ## Code Example:Database Schema
 
 ### Issues
+
 ```python
 class Issue(EmbeddedJsonModel, JsonModel):
     subject: Optional[Optional[str]] = Field(index=True)
@@ -84,6 +87,7 @@ class Issue(EmbeddedJsonModel, JsonModel):
 ```
 
 ### Messages
+
 ```python
 class Message(JsonModel):
     issue: Optional[Optional[str]] = Field(index=True)
@@ -93,6 +97,7 @@ class Message(JsonModel):
     message_body: Optional[str] = Field(index=True)
 ```
 ### User
+
 ```python
 class User(EmbeddedJsonModel, JsonModel):
     first_name: Optional[str] = Field(index=True)
@@ -103,8 +108,16 @@ class User(EmbeddedJsonModel, JsonModel):
 ```
 
 ### How the data is accessed:
--Get:
-        - `` model_instance = ModelName.find((ModelName.field1=="value1")&(ModelName.field2=="value2")) `` - to filterby field1's and field2's values.
+
+- Get:
+         `` model_instance = ModelName.find((ModelName.field1=="value1")&(ModelName.field2=="value2")) `` - to filterby field1's and field2's values.
+
+- Update:
+        ``model_instance = ModelName().get(model_instance_id)``
+        ``model_instance.field1 = new_value1``
+        ``model_instance.field2 = new_value2``
+        ``model_instance.fieldN = new_valueN``
+        ``model_instance.save()``
 
 ## Code Example: How to access/get user data
 ```python
@@ -139,14 +152,6 @@ def get_users():
 
 ```
 
-
-
-### Performance Benchmarks
-
-[If you migrated an existing app to use Redis, please put performance benchmarks here to show the performance improvements.]
-
-
-
 ## How to run it locally?
 
 ### Backend
@@ -158,14 +163,14 @@ def get_users():
 - clone repo
 - access folder titled "CRM BACKEND"
 - add ".env" file in the root directory of the project and add the line:
-        -> REDIS_OM_URL=[URL_TO_REDIS_CLOUD]
+        -> "REDIS_OM_URL=[URL_TO_REDIS_CLOUD]"
 - create and activate virtual environment in the root directory using the command (on Windows 10 cmd):
-        -> python -m venv [ENVIRONMENT_NAME]
-        -> ENVIRONMENT_NAME\scripts\activate
+        -> "python -m venv [ENVIRONMENT_NAME]"
+        -> "[ENVIRONMENT_NAME]\scripts\activate"
 -install project packages in the active environment using the command (on Windows 10 cmd):
-        -> pip install -r requirements.txt
+        -> "pip install -r requirements.txt"
     -run flask API using the command (on Windows 10 cmd):
-        -> flask run
+        -> "flask run"
     -it should give an output like:
         * Debug mode: on
         * Running on localhost:[PORT_NUMBER]
@@ -176,47 +181,28 @@ def get_users():
 
 ### Frontend
 * Prerequisites:
-``Node.js > 14``
+``Node.js >= 14``
 * Local Installation Steps:
 
 ```
 - clone repo
 - access folder titled "CRM FRONTEND"
 - run "YARN INSTALL"
-- In the project folder, there is a file "config.js".change url to the backends server url.
+- In the project folder, there is a file "config.js".change url to your backends server url.
 - run "YARN DEV" to run the project
+- To expose host on a network run with --host flag eg:"YARN DEV --host"
 ```
-
-
-[Make sure you test this with a fresh clone of your repo, these instructions will be used to judge your app.]
 
 ### Prerequisites
 
-[Fill out with any prerequisites (e.g. Node, Docker, etc.). Specify minimum versions]
+``Node.js >= 14`` `` Python 3.8.2`` ``Redis Cloud Account``
 
-### Local installation
-
-[Insert instructions for local installation]
 
 ## Deployment
 
-To make deploys work, you need to create free account on [Redis Cloud](https://redis.info/try-free-dev-to)
+We recommend running this project Locally following the steps above
 
-### Google Cloud Run
 
-[Insert Run on Google button](https://cloud.google.com/blog/products/serverless/introducing-cloud-run-button-click-to-deploy-your-git-repos-to-google-cloud)
-
-### Heroku
-
-[Insert Deploy on Heroku button](https://devcenter.heroku.com/articles/heroku-button)
-
-### Netlify
-
-[Insert Deploy on Netlify button](https://www.netlify.com/blog/2016/11/29/introducing-the-deploy-to-netlify-button/)
-
-### Vercel
-
-[Insert Deploy on Vercel button](https://vercel.com/docs/deploy-button)
 
 ## More Information about Redis Stack
 
