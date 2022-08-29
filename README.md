@@ -44,15 +44,16 @@ Wacky Wildcards
 
 # Overview video (Optional)
 
-Here's a short video that explains the project and how it uses Redis:
-
-[Insert your own video here, and remove the one below]
-
-[![Embed your YouTube video](https://i.ytimg.com/vi/vyxdC1qK4NE/maxresdefault.jpg)](https://www.youtube.com/watch?v=vyxdC1qK4NE)
+<p style="text-align: center;" align="center">
+  <a target="_blank" href="https://www.youtube.com/watch?v=_m1BandnVsQ" style="text-align: center;">
+  <img src="images/thumbnail.png" style="max-width: 100%;" width="500" alt="Video"/>
+  //please add thumlain in images
+  </a>
+</p>
 
 # Link to Code
 
-[https://github.com/emacliam/REDIS-HACKERTHON---CRM]
+https://github.com/emacliam/REDIS-HACKERTHON---CRM
 
 # Languages Used:
 
@@ -202,7 +203,10 @@ def get_users():
 
 We recommend running this project Locally following the steps above
 
-
+### License
+```
+MIT
+```
 
 ## More Information about Redis Stack
 
