@@ -66,7 +66,7 @@ Here's a short video that explains the project and how it uses Redis:
 
 ### How the data is stored:
 
-Data is stored using RedisJSON module in DB and RedisOM Python as a client library
+Data is stored using ``RedisJSON`` module in DB and ``RedisOM Python`` as a client library
 
 - Store (Add):
           `` model_instance = ModelName(key1=value1, key2=value2, ..., keyN=valueN) ``
