@@ -60,7 +60,24 @@ https://github.com/emacliam/REDIS-HACKERTHON---CRM
 ``Javascript(Vue,js)``  ``html``  ``Tailwindcss``   ``Python``
 
 # Screen screenshots
-[Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
+
+## Landing Page
+
+<p style="text-align: center;" align="center">
+ <img src="images/landing.png" style="width: 100%;" height="500" alt="CRM"/>
+</p>
+
+## Dashboard Page
+
+<p style="text-align: center;" align="center">
+ <img src="images/dashboard.png" style="width: 100%;" height="500" alt="CRM"/>
+</p>
+
+## Chat Page
+
+<p style="text-align: center;" align="center">
+ <img src="images/chat.png" style="width: 100%;" height="500" alt="CRM"/>
+</p>
 
 
 ## How it works
