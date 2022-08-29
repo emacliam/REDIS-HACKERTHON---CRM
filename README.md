@@ -32,7 +32,7 @@ We want to provide a simple way  for customer representative agents to handle mu
 
 
 ### Where we used redis.
-#### ((as a primary database using RedisJson Module through Redis OM Python))
+#### ((as a primary database using ``RedisJson`` Module through ``Redis OM Python``))
 
 -  Storage of chat information - messages
 -  Storage of Issues
