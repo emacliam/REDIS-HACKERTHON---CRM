@@ -6,7 +6,7 @@
 
 ## STACKER
 
-Is a software that helps businesses to easy track communications between customer service agent and clients.It uses ``REDIS``to store data(issues submitted by clients).It is intergrated with a chat developed using ``socketIO``.This Project comes with a ``python(Flask) API`` and a ``Vue,Vite Application``.The user interface was build using ``tailwindCss``.
+Is a software that helps businesses to easily track communications between customer service agents and clients.It uses ``REDIS`` to store data(issues submitted by clients). It is integrated with a chat developed using ``socketIO``. This Project comes with a`` python(Flask) API `` and a ``Vue,Vite Application``.The user interface was built using ``tailwindCss``.
 
 ### Basic Functionality:
 
@@ -16,14 +16,15 @@ Is a software that helps businesses to easy track communications between custome
 4. On the customer service agent side.
 5. Login to the system.
 6. You will see a dashboard with a list of Issues to be attended.
-7. Those that already being attended by other Reps, will be inticated in red.
+7. Those that are already being attended by other agents, will be indicated in red.
 8. Attend an issue with a green background.
-9. To attend an issue, click go to chat.It will redirect you to a chat where you can communicate with a client.
+9. To attend an issue, click go to chat. It will redirect you to a chat where you can communicate with a client.
 10. The client will be notified when the issue is being attended.
 11. If an issue has been completed, it is CLOSED.
-12. If it is under investigation, it is ARCHIVED
-13. Otherwise, it is left OPEN
-14. On the dashboard, the client and the custoner service agent will be able to see their issues -open,closed and archived.
+12. If it is under investigation, it is ARCHIVED.
+13. Otherwise, it is left OPEN / in PROGRESS.
+14. On the dashboard, the client and the customer service agent will be able to see their issues -open,closed and archived.
+
 
 ### Why this?:
 

@@ -1,0 +1,22 @@
+{
+  "app_name": "STACKER-CRM",
+  "description": "software that helps businesses to easily track communications between customer service agents and clients.",
+  "hidden": "true",
+  "rank": "21",
+  "type": "Full App",
+  "contributed_by": "Community",
+  "repo_url": "https://github.com/emacliam/REDIS-HACKERTHON---CRM",
+  "download_url": "https://github.com/emacliam/REDIS-HACKERTHON---CRM/archive/refs/heads/master.zip",
+  "hosted_url": "",
+  "quick_deploy": "false",
+  "deploy_buttons": [],
+  "language": ["JavaScript", "Python"],
+  "redis_commands": ["GET", "SAVE", "FIND"],
+  "redis_features": ["primary storage"],
+  "redis_modules": ["RediJSON"],
+  "app_image_urls": ["..."],
+  "youtube_url": "...",
+  "special_tags": ["Hackathon"],
+  "verticals": ["Retail"],
+  "markdown": "https://github.com/emacliam/REDIS-HACKERTHON---CRM/blob/master/README.md"
+}
