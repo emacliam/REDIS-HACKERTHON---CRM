@@ -45,9 +45,8 @@ Wacky Wildcards
 # Overview video (Optional)
 
 <p style="text-align: center;" align="center">
-  <a target="_blank" href="https://www.youtube.com/watch?v=_m1BandnVsQ" style="text-align: center;">
-  <img src="images/thumbnail.png" style="max-width: 100%;" width="500" alt="Video"/>
-  //please add thumlain in images
+  <a target="_blank" href="https://youtu.be/jEBKR6g7VHs" style="text-align: center;">
+  <img src="https://github.com/emacliam/REDIS-HACKERTHON---CRM/blob/master/Images/landing.png" style="max-width: 100%;" width="500" alt="Video"/>
   </a>
 </p>
 
