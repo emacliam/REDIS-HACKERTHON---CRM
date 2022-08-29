@@ -32,7 +32,7 @@ We want to provide a simple way  for customer representative agents to handle mu
 
 
 ### Where we used redis.
-#### (as a primary database using RedisJson Module)
+#### ((as a primary database using RedisJson Module through Redis OM Python))
 
 -  Storage of chat information - messages
 -  Storage of Issues
@@ -65,18 +65,128 @@ Here's a short video that explains the project and how it uses Redis:
 ## How it works
 
 ### How the data is stored:
+Data is stored using RedisJSON module in DB and RedisOM Python as a client library
+    - Store (Add):
+        - `` model_instance = ModelName(key1=value1, key2=value2, ..., keyN=valueN) ``
+        - `` model_instance.save() ``
 
-Refer to [this example](https://github.com/redis-developer/basic-analytics-dashboard-redis-bitmaps-nodejs#how-the-data-is-stored) for a more detailed example of what you need for this section.
+## Code Example:Database Schema
+
+### Issues
+```python
+class Issue(EmbeddedJsonModel, JsonModel):
+    subject: Optional[Optional[str]] = Field(index=True)
+    description: Optional[str] = Field(index=True)
+    issue_status: Optional[str] = Field(index=True)
+    sender: Optional[str] = Field(index=True)
+    created_at: Optional[str] = Field(index=True)
+    record_status: Optional[str] = Field(index=True)
+```
+
+### Messages
+```python
+class Message(JsonModel):
+    issue: Optional[Optional[str]] = Field(index=True)
+    sender: Optional[str] = Field(index=True)
+    sender_data: User
+    issue_data: Issue
+    message_body: Optional[str] = Field(index=True)
+```
+### User
+```python
+class User(EmbeddedJsonModel, JsonModel):
+    first_name: Optional[str] = Field(index=True)
+    last_name: Optional[str] = Field(index=True)
+    role: Optional[str] = Field(index=True)
+    created_at: Optional[str] = Field(index=True)
+    record_status: Optional[str] = Field(index=True)
+```
 
 ### How the data is accessed:
+-Get:
+        - `` model_instance = ModelName.find((ModelName.field1=="value1")&(ModelName.field2=="value2")) `` - to filterby field1's and field2's values.
 
-Refer to [this example](https://github.com/redis-developer/basic-analytics-dashboard-redis-bitmaps-nodejs#how-the-data-is-accessed) for a more detailed example of what you need for this section.
+## Code Example: How to access/get user data
+```python
+def get_users():
+    try:
+        users = User.find(User.record_status=="ALIVE").all()
+        users_list = []
+
+        for user in users:
+            user_dict = {}
+
+            for x in user:
+                user_dict[x[0]] = x[1]
+
+            users_list.append(user_dict)
+
+        return jsonify({
+            "status_code": "200",
+            "status": "success",
+            "message": "users_retrieved_ok",
+            "data": users_list
+        })
+
+    except:
+        traceback.print_exc()
+        return jsonify({
+            "status_code": "500",
+            "status": "error",
+            "message": "failed_to_retrieve_users",
+            "data": [],
+        })
+
+```
+
+
 
 ### Performance Benchmarks
 
 [If you migrated an existing app to use Redis, please put performance benchmarks here to show the performance improvements.]
 
+
+
 ## How to run it locally?
+
+### Backend
+* Prerequisites:
+``Python 3.8.2``
+* Local Installation Steps:
+
+```
+- clone repo
+- access folder titled "CRM BACKEND"
+- add ".env" file in the root directory of the project and add the line:
+        -> REDIS_OM_URL=[URL_TO_REDIS_CLOUD]
+- create and activate virtual environment in the root directory using the command (on Windows 10 cmd):
+        -> python -m venv [ENVIRONMENT_NAME]
+        -> ENVIRONMENT_NAME\scripts\activate
+-install project packages in the active environment using the command (on Windows 10 cmd):
+        -> pip install -r requirements.txt
+    -run flask API using the command (on Windows 10 cmd):
+        -> flask run
+    -it should give an output like:
+        * Debug mode: on
+        * Running on localhost:[PORT_NUMBER]
+        * Restarting with stat
+        * Debugger is active!
+        * Debugger PIN: [DEBUGGER_PIN]
+```
+
+### Frontend
+* Prerequisites:
+``Node.js > 14``
+* Local Installation Steps:
+
+```
+- clone repo
+- access folder titled "CRM FRONTEND"
+- run "YARN INSTALL"
+- In the project folder, there is a file "config.js".change url to the backends server url.
+- run "YARN DEV" to run the project
+```
+
 
 [Make sure you test this with a fresh clone of your repo, these instructions will be used to judge your app.]
 
