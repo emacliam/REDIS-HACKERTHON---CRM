@@ -14,7 +14,11 @@
   "redis_commands": ["GET", "SAVE", "FIND"],
   "redis_features": ["primary storage"],
   "redis_modules": ["RediJSON"],
-  "app_image_urls": ["..."],
+  "app_image_urls": [
+    "https://github.com/emacliam/REDIS-HACKERTHON---CRM/blob/master/Images/landing.png",
+    "https://github.com/emacliam/REDIS-HACKERTHON---CRM/blob/master/Images/dashboard.png",
+    "https://github.com/emacliam/REDIS-HACKERTHON---CRM/blob/master/Images/chat.png"
+  ],
   "youtube_url": "...",
   "special_tags": ["Hackathon"],
   "verticals": ["Retail"],
