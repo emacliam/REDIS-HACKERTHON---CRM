@@ -1,5 +1,5 @@
 <p style="text-align: center;" align="center">
- <img src="https://images.unsplash.com/photo-1652107788664-02b06074ac28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style="max-width: 100%;" width="250" alt="Recommendation"/>
+ <img src="https://images.unsplash.com/photo-1652107788664-02b06074ac28?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" style="max-width: 100%;" width="600" height="500" alt="Recommendation"/>
 </p>
 # [Insert your hackathon title or the app's title (keep it short)]
 
