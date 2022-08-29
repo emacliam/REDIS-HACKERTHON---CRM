@@ -51,9 +51,11 @@ Here's a short video that explains the project and how it uses Redis:
 
 # Link to Code
 
+[https://github.com/emacliam/REDIS-HACKERTHON---CRM]
+
 # Languages Used:
 
-``Javascript(Vue,js)``, ``html``, ``Tailwindcss`` ,``Python``
+``Javascript(Vue,js)``  ``html``  ``Tailwindcss``   ``Python``
 
 # Screen screenshots
 [Insert app screenshots](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#uploading-assets)
